@@ -15,4 +15,4 @@ front-end: html/css/JavaScript (React js)
 
 back-end: JAVA (Spring Boot κατά πάσα πιθανότητα)
 
-database: MongoDB
+database: MongoDB ή mySQL
