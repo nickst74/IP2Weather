@@ -4,15 +4,6 @@
 Ο χρήστης δίνει ως είσοδο μια IP διεύθυνση και η εφαρμογή αναζητά πληροφορίες σχετικά με την τοποθεσία καθώς
 και τις καιρικές συνθήκες που επικρατούν σε αυτή, τις οποίες και επιστρέφει στο χρήστη.
 
-# APIs used:
-
-Αντιστοίχιση ip σε τοποθεσία (ip geolocation)\
-https://freegeoip.app/json/{ip}
-
-Καιρικές συνθήκες σε συγκεκριμένη τοποθεσία βάση ονόματος πόλης και γεωγραφικών συντεταγμένων αντίστοιχα\
-http://api.openweathermap.org/data/2.5/weather?q={city_name}&appid={api.key}\
-http://api.openweathermap.org/data/2.5/lat={latitude}&lon={longitude}%s&appid={api.key}
-
 Η εφαρμογή αποτελείται από μία βάση δεδομένων στην αποία γίνεται caching των παραπάνω πληροφοριών μειώνοντας τις αναφορές
 στα web services, ένα back-end/REST API υπεύθυνο για την ανάκτηση τους από τα web APIs ή τη βάση δεδομένων αν υπάρχουν
 ήδη εκεί, καθώς και τον έλεγχο της εγκύτητάς τους φροντίζοντας την ανανέωσή τους στη βάση αν έχει περάσει κάποιo
@@ -24,6 +15,17 @@ http://api.openweathermap.org/data/2.5/lat={latitude}&lon={longitude}%s&appid={a
 Επιπλέον αναπτύχθηκε μια single page σελίδα ως front-end που επιτρέπει τη γραφική παρουσίαση των αποτελεσμάτων, μαζί με την ύπαρξη χάρτη όπου προβάλεται η τοποθεσία που ανακτάται από το API, ενώ η εισαγωγή της IP γίνεται μέσω html input form.
 Σε περίπτβωση που η φόρμα δήλωσης αφεθεί κενή από το χρήστη γίνεται αυτόματα αναζήτηση της IP αυτού μέσω του API
 http://api.ipify.org/?format=json ενώ ακολουθείται αντίστοιχη διαδικασία με πριν για τα υπόλοιπα.
+
+
+# APIs used:
+
+Αντιστοίχιση ip σε τοποθεσία (ip geolocation)\
+https://freegeoip.app/json/{ip}
+
+Καιρικές συνθήκες σε συγκεκριμένη τοποθεσία βάση ονόματος πόλης και γεωγραφικών συντεταγμένων αντίστοιχα\
+http://api.openweathermap.org/data/2.5/weather?q={city_name}&appid={api.key}\
+http://api.openweathermap.org/data/2.5/lat={latitude}&lon={longitude}%s&appid={api.key}
+
 
 # Technologies:
 
