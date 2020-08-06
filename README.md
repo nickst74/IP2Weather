@@ -23,7 +23,7 @@ http://api.ipify.org/?format=json ενώ ακολουθείται αντίστο
 https://freegeoip.app/json/{ip}
 
 Καιρικές συνθήκες σε συγκεκριμένη τοποθεσία βάση ονόματος πόλης και γεωγραφικών συντεταγμένων αντίστοιχα\
-http://api.openweathermap.org/data/2.5/weather?q={city_name}&appid={api.key}\
+http://api.openweathermap.org/data/2.5/weather?q={city_name}&appid={api.key} \
 http://api.openweathermap.org/data/2.5/lat={latitude}&lon={longitude}%s&appid={api.key}
 
 Εύρεση της IP του χρήστη (client-side)\
