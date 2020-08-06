@@ -26,6 +26,9 @@ https://freegeoip.app/json/{ip}
 http://api.openweathermap.org/data/2.5/weather?q={city_name}&appid={api.key}\
 http://api.openweathermap.org/data/2.5/lat={latitude}&lon={longitude}%s&appid={api.key}
 
+Εύρεση της IP του χρήστη (client-side)\
+http://api.ipify.org/?format=json
+
 
 # Technologies:
 
