@@ -41,7 +41,7 @@ database: MongoDB
 jdk-14.0.2\
 apache-maven-3.6.3\
 mongodb-4.2.8\
-(οποιοδήποτε http-server για το front-end)
+(οποιοδήποτε http-server για το front-end που να υποστηρίζει HTML5)
 
 # Deployment:
 
