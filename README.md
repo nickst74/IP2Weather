@@ -4,7 +4,7 @@
 Ο χρήστης δίνει ως είσοδο μια IP διεύθυνση και η εφαρμογή αναζητά πληροφορίες σχετικά με την τοποθεσία καθώς
 και τις καιρικές συνθήκες που επικρατούν σε αυτή, τις οποίες και επιστρέφει στο χρήστη.
 
-Οι πληροφορίες αντλούνται από τα ακόλοουθα APIs:
+# APIs used:
 
 Αντιστοίχιση ip σε τοποθεσία (ip geolocation)\
 https://freegeoip.app/json/{ip}
@@ -25,9 +25,9 @@ http://api.openweathermap.org/data/2.5/lat={latitude}&lon={longitude}%s&appid={a
 Σε περίπτβωση που η φόρμα δήλωσης αφεθεί κενή από το χρήστη γίνεται αυτόματα αναζήτηση της IP αυτού μέσω του API
 http://api.ipify.org/?format=json ενώ ακολουθείται αντίστοιχη διαδικασία με πριν για τα υπόλοιπα.
 
-# Εργαλεία που χρησιμοποιήθηκαν:
+# Technologies:
 
-front-end: HTML, CSS, JavaScript (AJAX για επικοινωνία με το REST API)\
+front-end: HTML, CSS, JavaScript (AJAX and leaflet)\
 back-end: JAVA (Spring framework)\
 database: MongoDB
 
