@@ -7,16 +7,20 @@
 Οι πληροφορίες αντλούνται από τα ακόλοουθα APIs:
 
 Αντιστοίχιση ip σε τοποθεσία (ip geolocation)
+
 https://freegeoip.app/json/{ip}
 
 Καιρικές συνθήκες σε συγκεκριμένη τοποθεσία βάση ονόματος πόλης και γεωγραφικών συντεταγμένων αντίστοιχα
+
 http://api.openweathermap.org/data/2.5/weather?q={city_name}&appid={api.key}
+
 http://api.openweathermap.org/data/2.5/lat={latitude}&lon={longitude}%s&appid={api.key}
 
 Η εφαρμογή αποτελείται από μία βάση δεδομένων στην αποία γίνεται caching των παραπάνω πληροφοριών μειώνοντας τις αναφορές
 στα web services, ένα back-end/REST API υπεύθυνο για την ανάκτηση τους από τα web APIs ή τη βάση δεδομένων αν υπάρχουν
 ήδη εκεί, καθώς και τον έλεγχο της εγκύτητάς τους φροντίζοντας την ανανέωσή τους στη βάση αν έχει περάσει κάποιo
 χρονικό διάστημα από το τελευταίο refresh τους (κάθε αναφορά στις υπηρεσίες ή στη βάσης γίνεται μόνο on-demand της πληροφορίας).
+
 Έχει μόλις ένα end-point για http get requests που φέρουν και την ip, ενώ παρέχει δυνατότητα επιλογής του response format
 μεταξέ json και xml (από default χρησιμοποιείται json).
 
@@ -28,14 +32,19 @@ http://api.ipify.org/?format=json ενώ ακολουθείται αντίστο
 # Εργαλεία που χρησιμοποιήθηκαν:
 
 front-end: HTML, CSS, JavaScript (AJAX για επικοινωνία με το REST API)
+
 back-end: JAVA (Spring framework)
+
 database: MongoDB
 
 # Required Instalations:
 
 jdk-14.0.2
+
 apache-maven-3.6.3
+
 mongodb-4.2.8
+
 (οποιοδήποτε http-server για το front-end)
 
 # Deployment:
@@ -45,15 +54,21 @@ mongodb-4.2.8
 απαιτείται αντικατάσταση των backslash με slash στα ακόλουθα βήματα)
 
 Εκκίνηση mongodb:
+
 cd {path\to\installation\dir}\MongoDB\Server\4.2\bin
+
 mongod --dbpath="{database\path\folder}"
+
 (το πρώτο ορίστηκε κατά την εγκατάσταση, το δεύτερο ορίζει τον φάκελο αποθήκευσης των δεδομένων της βάσης)
 
 Εκκίνηση REST API (back-end):
+
 cd {path\to\downloaded\project}\back-end\rest-service
+
 mvn spring-boot:run
 
 Εκκίνηση front-end:
+
 Εξαρτάται από τον http-server της επιλογής σας.
 Κατόπιν εκκίνησης αρκεί σύνδεση μέσω browser στη localhost:port
 όπου port η θύρα στην οποία τρέχει ο server.
@@ -61,6 +76,7 @@ mvn spring-boot:run
 # Use instructions and functionalities:
 
 Χρήση γραφικού περιβάλλοντος front-end (functionalities):
+
 Η σελίδα φέρει μία φόρμα συμπλήρωσης της επιθυμητής IP διεύθυνσης χωρισμένη σε 4 πεδία για εύκολη εισαγωγή
 αλλά και έλεγχο εγκυρότητας της εισόδου από τον χρήστη. Η υποβολή της IP για ανάκτηση της πληροφορίας γίνεται
 μετά με το κουμπί submit (ενώ υπάρχει δυνατότητα αφεθεί κενή η φόρμα όπως περιγράφηκε ήδη).
@@ -69,6 +85,7 @@ mvn spring-boot:run
 Ο χάρτης αυτός προστέθηκε με τη βοήθεια της βιβλιοθήκης leaflet σε JavaScript.
 
 Χρήση REST API (back-end):
+
 Είναι εφικτή και η χρήση του REST API ως μια stand-alone εφαρμογή η οποία δέχεται http get requests της
 μορφής http://localhost:8080/ip2weather?ip=2.2.2.2&mediaType=xml που θα επιστρέφει την πληροφορία σε xml
 format αν οριστεί η mediaType μεταβήτή όπως φαίνεται στο url, αλλιώς αν οριστεί json ή δεν συμπεριληφθεί καθόλου
@@ -82,4 +99,5 @@ error checking και exception handling (τόσο σε back-end όσο και f
 # Author:
 
 Σταματελόπουλος Νικόλαος
+
 03116138
