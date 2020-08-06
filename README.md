@@ -59,7 +59,7 @@ cd {path\to\downloaded\project}\back-end\rest-service\
 mvn spring-boot:run
 
 Εκκίνηση front-end:\
-Εξαρτάται από τον http-server της επιλογής σας.\
+Εξαρτάται από τον http-server της επιλογής σας, ή άνοιγμα με browser (δοκιμάστηκε επιτυχώς σε monzilla firefox).\
 Κατόπιν εκκίνησης αρκεί σύνδεση μέσω browser στη localhost:port
 όπου port η θύρα στην οποία τρέχει ο server.
 
