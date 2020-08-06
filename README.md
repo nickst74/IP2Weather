@@ -54,7 +54,7 @@ cd {path\to\installation\dir}\MongoDB\Server\4.2\bin\
 mongod --dbpath="{database\path\folder}"\
 (το πρώτο ορίστηκε κατά την εγκατάσταση, το δεύτερο ορίζει τον φάκελο αποθήκευσης των δεδομένων της βάσης)\
 (Σε περίπτωση που δεν τρέχει στην default port πρέπει να τεθεί η σωστή θύρα στο back-end, στο αρχείο\
-\path\to\rest-service\src\main\resources\application.properties -> server.port)
+\path\to\rest-service\src\main\resources\application.properties -> spring.data.mongodb.port)
 
 Εκκίνηση REST API (back-end τρέχει στη 8080 θύρα):\
 cd {path\to\downloaded\project}\back-end\rest-service
