@@ -49,19 +49,21 @@ mongodb-4.2.8\
 (περιβλάλλον υλοποίησης Windows 10, σε περίπτωση λειτουργικού τύπου Unix
 απαιτείται αντικατάσταση των backslash με slash στα ακόλουθα βήματα)
 
-Εκκίνηση mongodb:\
+Εκκίνηση mongodb (default port->27017):\
 cd {path\to\installation\dir}\MongoDB\Server\4.2\bin\
 mongod --dbpath="{database\path\folder}"\
-(το πρώτο ορίστηκε κατά την εγκατάσταση, το δεύτερο ορίζει τον φάκελο αποθήκευσης των δεδομένων της βάσης)
+(το πρώτο ορίστηκε κατά την εγκατάσταση, το δεύτερο ορίζει τον φάκελο αποθήκευσης των δεδομένων της βάσης)\
+(Σε περίπτωση που δεν τρέχει στην default port πρέπει να τεθεί η σωστή θύρα στο back-end, στο αρχείο\
+\path\to\rest-service\src\main\resources\application.properties -> server.port)
 
-Εκκίνηση REST API (back-end):\
-cd {path\to\downloaded\project}\back-end\rest-service\
+Εκκίνηση REST API (back-end τρέχει στη 8080 θύρα):\
+cd {path\to\downloaded\project}\back-end\rest-service
 mvn spring-boot:run
 
 Εκκίνηση front-end:\
 Εξαρτάται από τον http-server της επιλογής σας, ή άνοιγμα με browser (δοκιμάστηκε επιτυχώς σε monzilla firefox).\
 Κατόπιν εκκίνησης αρκεί σύνδεση μέσω browser στη localhost:port
-όπου port η θύρα στην οποία τρέχει ο server.
+όπου port η θύρα στην οποία τρέχει ο http server.
 
 # Use instructions and functionalities:
 
