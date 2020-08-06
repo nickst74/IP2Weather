@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link rel="icon" type="image/png" href="https://mash.ie/wp-content/uploads/2019/06/aimsir.ico"/>
+        <meta charset="utf-8">
+        <title>IP2Weather</title>
+        <meta name="nickst74" content="text/html">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="./leaflet/leaflet.css" />
+        <script src="./scripts.js"></script>
+        <script src="./leaflet/leaflet.js"></script>
+    </head>
+    <body>
+        <div id="header" style="text-align: center;">
+            <h1 style="color: rgb(255, 255, 255); padding-top: 15px;">
+                <b>IP2Weather</b>
+            </h1>
+            <p style="color: rgb(255, 255, 255)"> Come for the weather... Stay for the experience.</p>
+        </div>
+        <div id="main">
+            <div id="form">
+                <img src="https://www.asktechnolink.com//images-Content/blog/computer_protection.jpg" style="width: 100%; position: absolute; top: 10%;">
+                <div id="ip_input">
+                    <div id="loading" style="position: absolute; bottom: -60px;"><div></div><div></div><div></div><div></div></div>
+                    <p style="position: absolute; top: -20px; font-weight: bold;">
+                        Please enter ip here (0-255):
+                    </p>
+                    <p id="warning_msg" style="position: absolute; bottom: -25px; font-weight: bold; font-size: small; color: red;"></p>
+                    <input class="in" id="ip1" value="">
+                    <p class="ip_dot">.</p>
+                    <input class="in" id="ip2" value="">
+                    <p class="ip_dot">.</p>
+                    <input class="in" id="ip3" value="">
+                    <p class="ip_dot">.</p>
+                    <input class="in" id="ip4" value="">
+                    <script>
+                        // register event listeners for the input boxes
+                        //only numbers from 0 to 255 are accepted
+                        setInputFilter(document.getElementById("ip1"), function(value) {
+                            return /^\d*$/.test(value) && (value === "" || value.length <= 3); // Allow digits only, using a RegExp
+                        });
+                        setInputFilter(document.getElementById("ip2"), function(value) {
+                            return /^\d*$/.test(value) && (value === "" || value.length <= 3); // Allow digits only, using a RegExp
+                        });
+                        setInputFilter(document.getElementById("ip3"), function(value) {
+                            return /^\d*$/.test(value) && (value === "" || value.length <= 3); // Allow digits' only, using a RegExp
+                        });
+                        setInputFilter(document.getElementById("ip4"), function(value) {
+                            return /^\d*$/.test(value) && (value === "" || value.length <= 3); // Allow digits only, using a RegExp
+                        });
+                    </script>
+                    <button id="ip_button" onclick="submitIP()">Submit</button>
+                </div>
+            </div>
+            <div id="map">
+                <script>
+                    // initialize the map
+                    var map = L.map('map').setView([lat, lon], zoom);
+                    // load a tile layer
+                    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',{
+                    maxZoom: 18}).addTo(map);
+                    L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner-labels/{z}/{x}/{y}{r}.png',{
+                    maxZoom: 18}).addTo(map);
+                </script>
+                <button id="reset-view" onclick="resetView()">RST</button>
+            </div>
+        </div>
+        <div id="weather">
+            <div class="weather_box">
+                <p id="weather_info">--</p>
+                <img class="img" id="weather_icon" src="http://openweathermap.org/img/wn/13d@2x.png" style="width: 130px; position: absolute;
+                left: 7px; bottom: -8px;">
+            </div>
+            <div class="weather_box">
+                <p id="temperature">-- &#8451;</p>
+                <img class="img" id="temperature_icon" src="./imgs/mid_temp.png" style="width: 40px; height: 100px; position: absolute;
+                left: 48px; bottom: 4px;">
+            </div>
+            <div class="weather_box">
+                <p id="pressure">-- hPa</p>
+                <img class="img" src="./imgs/barometer.png" style="position: absolute; left:15px; bottom: -2px">
+            </div>
+            <div class="weather_box">
+                <p id="humidity">-- %</p>
+                <img class="img" src="./imgs/humidity.png" style="position: absolute; left: 19px; bottom: 0;">
+            </div>
+            <div class="weather_box">
+                <p id="wind_speed">--km/h</p>
+                <img class="img" id="wind_icon" src="./imgs/arrow.png" style="position: absolute; left: 32px; bottom: 15px; width: 80px;">
+            </div>
+        </div>
+    </body>
+</html>
