@@ -85,6 +85,10 @@ format αν οριστεί η mediaType μεταβήτή όπως φαίνετα
 error checking και exception handling (τόσο σε back-end όσο και front-end) με επιστροφή των κατάληλων μηνυμάτων
 καθοδήγησης του χρήστη.
 
+# Video link:
+
+
+
 # Author:
 
 Σταματελόπουλος Νικόλαος\
