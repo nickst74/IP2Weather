@@ -49,12 +49,11 @@ mongodb-4.2.8\
 (περιβλάλλον υλοποίησης Windows 10, σε περίπτωση λειτουργικού τύπου Unix
 απαιτείται αντικατάσταση των backslash με slash στα ακόλουθα βήματα)
 
-Εκκίνηση mongodb (default port->27017):\
+Εκκίνηση mongodb για πρώτη φορά (default port->27017):\
 cd {path\to\installation\dir}\MongoDB\Server\4.2\bin\
+mkdir {database\path\folder}\
 mongod --dbpath="{database\path\folder}"\
-(το πρώτο ορίστηκε κατά την εγκατάσταση, το δεύτερο ορίζει τον φάκελο αποθήκευσης των δεδομένων της βάσης)\
-(Σε περίπτωση που δεν τρέχει στην default port πρέπει να τεθεί η σωστή θύρα στο back-end, στο αρχείο\
-\path\to\rest-service\src\main\resources\application.properties -> spring.data.mongodb.port)
+(Οι παραπάνω εντολές εκετελούνται κατά την πρώτη εκκίνηση της βάσης, ώστε να οριστεί το directory αποθήκευσης των αρχείων που θα δημιουργηθούν, προτίνεται η χρήση ενός νέου directory που δημιουργεί ο χρήστης για αποφυγεί περιορισμένων δικαιωμάτων πρόσβασης της mongodb σε αυτό)
 
 Εκκίνηση REST API (back-end τρέχει στη 8080 θύρα):\
 cd {path\to\downloaded\project}\back-end\rest-service
