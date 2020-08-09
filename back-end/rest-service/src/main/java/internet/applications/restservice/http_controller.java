@@ -104,10 +104,10 @@ public class http_controller {
             }
         }
         // store to cache (db) if not already there
-        if(!iploc.isPresent()){
+        if(!iploc.isPresent() || !iploc.get().recent()){
             repo1.save(ip);
         }
-        if(!weather.isPresent()){
+        if(!weather.isPresent() || !weather.get().recent()){
             repo2.save(cw);
         }
         // return the requested data
