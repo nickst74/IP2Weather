@@ -192,6 +192,7 @@ function submitIP(){
   ip4 = document.getElementById("ip4").value;
   if(!validateInput(ip1, ip2, ip3, ip4)){
     warning("Please enter a valid IP address");
+    enableButton();
     return;
   }
   //validation passed successfully -> disable button until response
