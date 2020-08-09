@@ -87,7 +87,7 @@ error checking και exception handling (τόσο σε back-end όσο και f
 
 # Video link:
 
-https://youtu.be/JAPhm4q_Pcg
+https://youtu.be/DP6kWuXwtY0
 
 # Author:
 
